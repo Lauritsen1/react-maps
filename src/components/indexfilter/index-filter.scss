@@ -1,0 +1,11 @@
+.alphabet {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.5em;
+    border: 1px solid lightgrey;
+
+    li {
+        cursor: pointer;
+        padding: 0.5em;
+    }
+}

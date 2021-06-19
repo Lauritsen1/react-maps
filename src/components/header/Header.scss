@@ -1,0 +1,23 @@
+.header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    text-align: center;
+    padding: 1em;
+    background-color: #007acc;
+
+    a {
+        text-align: left;
+        font-size: 1.5em;
+        
+        i {
+            color: white;
+        }
+    }
+
+    h1 {
+        width: max-content;
+        color: white;
+        font-size: 1.5em;
+    }
+}

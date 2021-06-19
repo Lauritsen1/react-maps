@@ -1,0 +1,25 @@
+.table {
+    margin: 0 1em;
+    
+    &__row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 0.8em;
+    }
+
+    &__row:nth-child(even) {
+        background-color: white;
+    }
+
+    &__heading {
+        font-weight: bold;
+    }
+}
+
+.flag {
+    margin: 1em;
+    
+    img {
+        width: 100%;
+    }
+}

@@ -1,0 +1,22 @@
+.country-list {
+    padding: 0 1em;
+
+    &__inner-container {
+        margin-bottom: 2em;
+    }
+
+    &__heading {
+        margin-bottom: 0.5em;
+        color: #007acc;
+        font-size: 2em;
+    }
+
+    &__item {
+        
+        a {
+            text-decoration: none;
+            font-size: 1em;
+            line-height: 2;
+        }
+    }
+}
