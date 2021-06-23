@@ -18,8 +18,8 @@ const Map = ({lat, lng}) => {
   return (
     <div className="map-container">
       <GoogleMapExample
-        containerElement={<div style={{height: `25em`, width: '100%' }} />}
-        mapElement={<div style={{ height: `100%`,  width: `100%` }} />}
+        containerElement={<div className="googlemap-container" />}
+        mapElement={<div className="googlemap-element" />}
       />
     </div>
   );

@@ -1,0 +1,15 @@
+.home-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin: 1em;
+}
+
+@media only screen and (min-width: 771px) {
+
+    .home-wrapper {
+        max-width: 46.25em;
+        margin: 1em auto;
+    }
+
+}

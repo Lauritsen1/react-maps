@@ -1,8 +1,11 @@
 .search {
-
+    
     &__bar {
         width: 100%;
         height: 3em;
         padding-left: 0.5em;
+        background-color: whitesmoke;
+        border: none;
+        border: 1px solid lightgrey;
     }
 }

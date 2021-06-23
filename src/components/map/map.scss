@@ -1,3 +1,16 @@
-.map-container {
-    margin: 1em;
+.googlemap-container {
+    height: 25em;
+    width: 100%;
+}
+
+.googlemap-element {
+    height: 100%;
+    width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+    .googlemap-container {
+        height: 100%;
+    }
+    
 }

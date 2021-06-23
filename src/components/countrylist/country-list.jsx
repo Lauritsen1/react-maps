@@ -6,7 +6,6 @@ const CountryList = ({ countryList = [], filter }) => {
 
   let data = countryList.reduce((r, e) => {
 
-    // get first letter of name of current element
     let alphabet = e.name[0];
 
     if (!r[alphabet]) r[alphabet] = { alphabet, record: [e] }
@@ -19,29 +18,19 @@ const CountryList = ({ countryList = [], filter }) => {
   let sortedCountryList = Object.values(data);
 
   return (
-    <ul className="country-list">
-
+    <>
       {sortedCountryList.map((element, index) => {
 
-        return (
-          <div key={index} className="country-list__inner-container">
-            <h2 className="country-list__heading">{element.alphabet}</h2>
-            {element.record.map(country => {
+        if (element.alphabet === filter) {
+          return (
+            <div key={index} className="country-list-container">
 
-              if (country) {
+              <h2 className="country-list-container__heading">{element.alphabet}</h2>
 
-                if (country.name.charAt(0) === filter) {
+              <ul className="country-list">
 
-                  return (
 
-                    <li key={country.numericCode} className="country-list__item">
-                      <Link to={`/country/${country.name}`}>{country.name}</Link>
-                    </li>
-
-                  )
-                }
-
-                if (filter === 'All') {
+                {element.record.map(country => {
 
                   return (
 
@@ -51,17 +40,42 @@ const CountryList = ({ countryList = [], filter }) => {
 
                   )
 
-                }
+                })}
+              </ul>
+            </div>
+          )
+        }
 
-              }
-              return null;
+        if (filter === 'All') {
 
-            })}
-          </div>
-        )
+          return (
+            <div key={index} className="country-list-container">
+
+              <h2 className="country-list-container__heading">{element.alphabet}</h2>
+
+              <ul className="country-list">
+
+
+                {element.record.map(country => {
+
+                  return (
+
+                    <li key={country.numericCode} className="country-list__item">
+                      <Link to={`/country/${country.name}`}>{country.name}</Link>
+                    </li>
+
+                  )
+
+                })}
+              </ul>
+            </div>
+          )
+
+        }
+
+        return null;
       })}
-    </ul>
-
+    </>
   );
 };
 

@@ -23,9 +23,9 @@ const Country = () => {
   useEffect(() => { fetchData() }, []);
 
   return (
-    <div>
-      {country && <CountryDataTable countryData={country}/>}
-      {country && <Map lat={country.latlng[0]} lng={country.latlng[1]}/>}
+    <div className="country-wrapper">
+      {country && <Map lat={country.latlng[0]} lng={country.latlng[1]} />}
+      {country && <CountryDataTable countryData={country} />}
     </div>
   );
 };

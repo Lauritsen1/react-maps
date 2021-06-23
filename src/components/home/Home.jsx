@@ -24,6 +24,8 @@ const Home = () => {
 
   const getClickedIndex = (e) => {
     setFilter(e.target.dataset.letter);
+    setInput('');
+    setCountryList(countryListDefault);
   }
 
   const updateInput = async (input) => {
@@ -32,12 +34,13 @@ const Home = () => {
     })
     setInput(input);
     setCountryList(filtered);
+    setFilter('All');
   }
 
   useEffect(() => { fetchData() }, []);
 
   return (
-    <div className="wrapper">
+    <div className="home-wrapper">
       <SearchBar input={input} onChange={updateInput} />
       <IndexFilter getClickedIndex={getClickedIndex} />
       <CountryList filter={filter} countryList={countryList} />
