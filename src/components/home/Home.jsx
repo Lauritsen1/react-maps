@@ -15,7 +15,7 @@ const Home = () => {
 
   const fetchData = async () => {
     return await fetch('https://restcountries.eu/rest/v2/all')
-      .then(response => response.json())
+      .then(res => res.json())
       .then(data => {
         setCountryList(data);
         setCountryListDefault(data);

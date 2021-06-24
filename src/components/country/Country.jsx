@@ -12,15 +12,19 @@ const Country = () => {
 
   const { id } = useParams();
 
-  const fetchData = async () => {
-    return await fetch(`https://restcountries.eu/rest/v2/name/${id}?fullText=true`)
-      .then(response => response.json())
-      .then(data => {
-        setCountry(data[0]);
-      });
-  }
+  useEffect(() => { 
 
-  useEffect(() => { fetchData() }, []);
+    const fetchData = async () => {
+      return await fetch(`https://restcountries.eu/rest/v2/name/${id}?fullText=true`)
+        .then(res => res.json())
+        .then(data => {
+          setCountry(data[0]);
+        });
+    }
+    
+    fetchData(); 
+
+  }, [id]);
 
   return (
     <div className="country-wrapper">
