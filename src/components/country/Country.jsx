@@ -15,7 +15,7 @@ const Country = () => {
   useEffect(() => { 
 
     const fetchData = async () => {
-      return await fetch(`https://restcountries.eu/rest/v2/name/${id}?fullText=true`)
+      return await fetch(`https://restcountries.com/v2/name/${id}?fullText=true`)
         .then(res => res.json())
         .then(data => {
           setCountry(data[0]);

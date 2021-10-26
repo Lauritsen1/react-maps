@@ -14,7 +14,7 @@ const Home = () => {
   const [filter, setFilter] = useState('All');
 
   const fetchData = async () => {
-    return await fetch('https://restcountries.eu/rest/v2/all')
+    return await fetch('https://restcountries.com/v2/all')
       .then(res => res.json())
       .then(data => {
         setCountryList(data);
