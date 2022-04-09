@@ -1,36 +1,23 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import "./App.css";
 
 import Header from "./components/header/Header";
 import Home from "./components/home/Home";
 import Country from "./components/country/Country";
 
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-
 function App() {
-  return (
-    <Router>
-      <div className="App">
+	return (
+		<>
+			<Router>
+				<Header />
 
-        <Header />
-
-        <Switch>
-
-          <Route exact path="/">
-
-            <Home />
-
-          </Route>
-
-          <Route exact path="/country/:id">
-            
-            <Country />
-
-          </Route>
-
-        </Switch>
-      </div>
-    </Router>
-  );
+				<Routes>
+					<Route path="/" element={<Home />} />
+					<Route path="/country/:id" element={<Country />} />
+				</Routes>
+			</Router>
+		</>
+	);
 }
 
 export default App;

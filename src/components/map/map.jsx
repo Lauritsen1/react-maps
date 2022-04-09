@@ -1,29 +1,18 @@
-import React from 'react';
-import { withGoogleMap, GoogleMap } from 'react-google-maps';
+import GoogleMapReact from 'google-map-react';
 
+import './map.scss';
 
-import "./map.scss";
-
-const Map = ({lat, lng}) => {
-
-  const GoogleMapExample = withGoogleMap(props => (
-    <GoogleMap
-      defaultCenter={{ lat: lat, lng: lng }}
-      defaultZoom={5}
-    >
-    </GoogleMap>
-
-  ));
-
-  return (
-    <div className="map-container">
-      <GoogleMapExample
-        containerElement={<div className="googlemap-container" />}
-        mapElement={<div className="googlemap-element" />}
-      />
+const Map = ({ location }) => (
+    <div className='map'>
+        <div className='google-map'>
+            <GoogleMapReact
+                bootstrapURLKeys={{
+                    key: 'AIzaSyCHxlvogES2Axlu1ALabWd_Bx3Lv_uokWs',
+                }}
+                defaultCenter={location}
+                defaultZoom={5}></GoogleMapReact>
+        </div>
     </div>
-  );
-
-};
+);
 
 export default Map;
